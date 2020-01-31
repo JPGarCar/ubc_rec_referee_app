@@ -16,6 +16,7 @@ class _ClockPageState extends State<ClockPage> {
         children: <Widget>[
           Expanded(
             flex: 2,
+            // TODO get that clock
             child: Text("Clock"),
           ),
           Expanded(
@@ -35,7 +36,7 @@ class _ClockPageState extends State<ClockPage> {
             child: RectangleButton(
               text: "Done",
               function: null,
-              edgeInset: EdgeInsets.all(10),
+              edgeInset: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
             ),
           ),
         ],

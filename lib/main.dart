@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ubc_rec_refferee_app/pages/clock_page.dart';
 import 'package:ubc_rec_refferee_app/pages/endGame_page.dart';
 import 'package:ubc_rec_refferee_app/pages/main_page.dart';
+import 'package:ubc_rec_refferee_app/pages/score_page.dart';
 import 'package:ubc_rec_refferee_app/pages/timer_page.dart';
 
 void main() => runApp(MyApp());
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
               ),
             ],
           ),
-          body: ClockPage(),
+          body: ScorePage(),
         ),
       ),
     );

@@ -9,7 +9,7 @@ class ScoreBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Text(
-        score,
+        score.toString(),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 55,

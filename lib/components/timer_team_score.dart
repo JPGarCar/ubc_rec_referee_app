@@ -31,7 +31,7 @@ class TimerTeamScore extends StatelessWidget {
           Expanded(
             flex: 3,
             child: ScoreBox(
-              score: score.toString(),
+              score: score,
             ),
           ),
         ],
