@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ubc_rec_refferee_app/components/rectangle_button.dart';
-import 'package:ubc_rec_refferee_app/main_page.dart';
-import 'package:ubc_rec_refferee_app/timer_page.dart';
+import 'package:ubc_rec_refferee_app/pages/endGame_page.dart';
+import 'package:ubc_rec_refferee_app/pages/main_page.dart';
+import 'package:ubc_rec_refferee_app/pages/timer_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               ),
             ],
           ),
-          body: TimerPage(),
+          body: EndGamePage(),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ubc_rec_refferee_app/constants.dart';
-import 'components/rectangle_button.dart';
+import '../components/rectangle_button.dart';
 
 class MainPage extends StatefulWidget {
   @override

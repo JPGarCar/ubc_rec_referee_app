@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'components/rectangle_button.dart';
+import '../components/rectangle_button.dart';
+import '../components/timer_team_score.dart';
 
 class TimerPage extends StatefulWidget {
   @override
@@ -123,57 +124,6 @@ class TimerTimeOuts extends StatelessWidget {
               text: "T/O",
               function: null,
               color: Colors.lightBlueAccent,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class TimerTeamScore extends StatelessWidget {
-  const TimerTeamScore({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Container(
-              child: Text(
-                "Team Name Two",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              alignment: Alignment.center,
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              child: Text(
-                "45",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 55,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                border: Border.all(color: Colors.black),
-              ),
-              constraints: BoxConstraints.expand(),
-              alignment: Alignment.center,
             ),
           ),
         ],
