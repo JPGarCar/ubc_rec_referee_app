@@ -45,16 +45,22 @@ class _MainPageState extends State<MainPage> {
                 children: <Widget>[
                   Expanded(
                     child: RectangleButton(
+                      edgeInset: EdgeInsets.all(20),
                       text: "New Game",
+                      function: null,
                     ),
                   ),
                   Expanded(
                       child: RectangleButton(
+                    edgeInset: EdgeInsets.all(20),
                     text: "Game History",
+                    function: null,
                   )),
                   Expanded(
                     child: RectangleButton(
+                      edgeInset: EdgeInsets.all(20),
                       text: "Timer",
+                      function: null,
                     ),
                   ),
                 ],

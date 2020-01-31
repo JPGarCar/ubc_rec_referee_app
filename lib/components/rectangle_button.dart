@@ -11,7 +11,7 @@ class RectangleButton extends StatelessWidget {
       {@required this.text,
       @required this.function,
       this.color = Colors.green,
-      this.edgeInset = 20});
+      @required this.edgeInset});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class RectangleButton extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         constraints: BoxConstraints.expand(),
-        margin: EdgeInsets.all(edgeInset.toDouble()),
+        margin: edgeInset,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: color,
