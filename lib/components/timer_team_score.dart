@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ubc_rec_refferee_app/components/score_box.dart';
+import 'package:ubc_rec_refferee_app/components/allComponents.dart';
 
 class TimerTeamScore extends StatelessWidget {
   final teamName;

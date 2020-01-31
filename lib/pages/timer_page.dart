@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/rectangle_button.dart';
-import '../components/timer_team_score.dart';
+import 'package:ubc_rec_refferee_app/components/allComponents.dart';
 
 class TimerPage extends StatefulWidget {
   @override

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ubc_rec_refferee_app/components/timer_team_score.dart';
-import '../components/rectangle_button.dart';
+import 'package:ubc_rec_refferee_app/components/allComponents.dart';
 
 class EndGamePage extends StatefulWidget {
   @override
