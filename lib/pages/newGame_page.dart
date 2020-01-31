@@ -14,135 +14,141 @@ class _NewGamePageState extends State<NewGamePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: BoxConstraints.expand(),
-      margin: EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: DropDownPack(
-                    edgeInsetPadding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                    label: "Field",
-                    hint: "Choose a field",
-                    // TODO extract list as constant
-                    values: <String>["Woods", "Warren", "South"]
-                        .map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    function: (newValue) {
-                      setState(() {
-                        field = newValue;
-                      });
-                    },
-                    variable: field,
-                  ),
-                ),
-                Expanded(
-                  child: DropDownPack(
-                    edgeInsetPadding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                    label: "Time",
-                    hint: "Choose a time",
-                    // TODO extract list as constant
-                    values: <String>["6:00 - 7:00 pm", "7:00 - 8:00 pm"]
-                        .map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    function: (newValue) {
-                      setState(() {
-                        time = newValue;
-                      });
-                    },
-                    variable: time,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Column(
-              children: <Widget>[
-                Flexible(
-                  child: DropDownPack(
-                      hint: "Choose Team 1",
-                      function: (newValue) {
-                        setState(() {
-                          teamOne = newValue;
-                        });
-                      },
-                      variable: teamOne,
-                      label: "Team 1:",
-                      // TODO extract lists to constants
+    return MainScaffold(
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        margin: EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: DropDownPack(
+                      edgeInsetPadding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                      label: "Field",
+                      hint: "Choose a field",
+                      // TODO extract list as constant
                       values: <String>["Woods", "Warren", "South"]
                           .map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
-                      }).toList()),
-                  fit: FlexFit.loose,
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Column(
-              children: <Widget>[
-                Flexible(
-                  child: DropDownPack(
-                      hint: "Choose Team 2",
+                      }).toList(),
                       function: (newValue) {
                         setState(() {
-                          teamTwo = newValue;
+                          field = newValue;
                         });
                       },
-                      variable: teamTwo,
-                      label: "Team 2:",
-                      // TODO extract list to constants
-                      values: <String>["Woods", "Warren", "South"]
+                      variable: field,
+                    ),
+                  ),
+                  Expanded(
+                    child: DropDownPack(
+                      edgeInsetPadding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                      label: "Time",
+                      hint: "Choose a time",
+                      // TODO extract list as constant
+                      values: <String>["6:00 - 7:00 pm", "7:00 - 8:00 pm"]
                           .map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
-                      }).toList()),
-                  fit: FlexFit.loose,
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: RectangleButton(
-                    text: "Start",
-                    function: null,
-                    edgeInset: EdgeInsets.all(8),
+                      }).toList(),
+                      function: (newValue) {
+                        setState(() {
+                          time = newValue;
+                        });
+                      },
+                      variable: time,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: RectangleButton(
-                    text: "5 min Warm Up",
-                    function: null,
-                    edgeInset: EdgeInsets.all(8),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Flexible(
+                    child: DropDownPack(
+                        hint: "Choose Team 1",
+                        function: (newValue) {
+                          setState(() {
+                            teamOne = newValue;
+                          });
+                        },
+                        variable: teamOne,
+                        label: "Team 1:",
+                        // TODO extract lists to constants
+                        values: <String>["Woods", "Warren", "South"]
+                            .map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList()),
+                    fit: FlexFit.loose,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Flexible(
+                    child: DropDownPack(
+                        hint: "Choose Team 2",
+                        function: (newValue) {
+                          setState(() {
+                            teamTwo = newValue;
+                          });
+                        },
+                        variable: teamTwo,
+                        label: "Team 2:",
+                        // TODO extract list to constants
+                        values: <String>["Woods", "Warren", "South"]
+                            .map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList()),
+                    fit: FlexFit.loose,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: RectangleButton(
+                      text: "Start",
+                      function: () {
+                        Navigator.popAndPushNamed(context, "TimerPage");
+                      },
+                      edgeInset: EdgeInsets.all(8),
+                    ),
+                  ),
+                  Expanded(
+                    child: RectangleButton(
+                      text: "5 min Warm Up",
+                      function: () {
+                        Navigator.popAndPushNamed(context, "TimerPage");
+                      },
+                      edgeInset: EdgeInsets.all(8),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

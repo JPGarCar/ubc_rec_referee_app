@@ -48,7 +48,9 @@ class _MainPageState extends State<MainPage> {
                       child: RectangleButton(
                         edgeInset: EdgeInsets.all(20),
                         text: "New Game",
-                        function: null,
+                        function: () {
+                          Navigator.pushNamed(context, "NewGamePage");
+                        },
                       ),
                     ),
                     Expanded(

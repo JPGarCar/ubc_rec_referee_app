@@ -9,37 +9,45 @@ class ClockPage extends StatefulWidget {
 class _ClockPageState extends State<ClockPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(5),
-      constraints: BoxConstraints.expand(),
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            // TODO get that clock
-            child: Text("Clock"),
-          ),
-          Expanded(
-            child: RectangleButton(
-              text: "Start Half",
-              function: null,
-              edgeInset: EdgeInsets.all(10),
+    return MainScaffold(
+      body: Container(
+        padding: EdgeInsets.all(5),
+        constraints: BoxConstraints.expand(),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              flex: 2,
+              // TODO get that clock
+              child: Text("Clock"),
             ),
-          ),
-          Expanded(
-            child: RectangleButton(
-                text: "Start 5 min Break",
-                function: null,
-                edgeInset: EdgeInsets.all(10)),
-          ),
-          Expanded(
-            child: RectangleButton(
-              text: "Done",
-              function: null,
-              edgeInset: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+            Expanded(
+              child: RectangleButton(
+                text: "Start Half",
+                function: () {
+                  Navigator.pop(context);
+                },
+                edgeInset: EdgeInsets.all(10),
+              ),
             ),
-          ),
-        ],
+            Expanded(
+              child: RectangleButton(
+                  text: "Start 5 min Break",
+                  function: () {
+                    Navigator.pop(context);
+                  },
+                  edgeInset: EdgeInsets.all(10)),
+            ),
+            Expanded(
+              child: RectangleButton(
+                text: "Done",
+                function: () {
+                  Navigator.pop(context);
+                },
+                edgeInset: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

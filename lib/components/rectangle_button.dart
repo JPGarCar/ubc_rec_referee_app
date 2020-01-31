@@ -16,7 +16,7 @@ class RectangleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      //onTap: , TODO,
+      onTap: function,
       child: Container(
         alignment: Alignment.center,
         constraints: BoxConstraints.expand(),
