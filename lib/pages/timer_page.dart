@@ -11,6 +11,7 @@ class _TimerPageState extends State<TimerPage> {
   @override
   Widget build(BuildContext context) {
     return MainScaffold(
+      isAppBar: false,
       body: Container(
         padding: EdgeInsets.all(5),
         constraints: BoxConstraints.expand(),

@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 class MainScaffold extends StatelessWidget {
   final body;
+  final isAppBar;
 
-  MainScaffold({this.body});
+  MainScaffold({@required this.body, this.isAppBar = true});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: true
+        appBar: isAppBar
             ? AppBar(
                 title: Text("UBC REC Flag Football App"),
               )
