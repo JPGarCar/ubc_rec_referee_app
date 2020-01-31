@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:ubc_rec_refferee_app/constants.dart';
 import 'components/rectangle_button.dart';
 
-class mainPage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _mainPageState createState() => _mainPageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _mainPageState extends State<mainPage> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -4,8 +4,13 @@ import 'package:ubc_rec_refferee_app/constants.dart';
 class RectangleButton extends StatelessWidget {
   final text;
   final function;
+  final color;
 
-  const RectangleButton({@required this.text, @required this.function});
+  const RectangleButton({
+    @required this.text,
+    @required this.function,
+    this.color = Colors.green,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class RectangleButton extends StatelessWidget {
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.green,
+          color: color,
         ),
         child: Text(
           text,
