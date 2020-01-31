@@ -83,6 +83,7 @@ class _NewGamePageState extends State<NewGamePage> {
                       },
                       variable: teamOne,
                       label: "Team 1:",
+                      // TODO extract lists to constants
                       values: <String>["Woods", "Warren", "South"]
                           .map((String value) {
                         return DropdownMenuItem<String>(
@@ -108,6 +109,7 @@ class _NewGamePageState extends State<NewGamePage> {
                       },
                       variable: teamTwo,
                       label: "Team 2:",
+                      // TODO extract list to constants
                       values: <String>["Woods", "Warren", "South"]
                           .map((String value) {
                         return DropdownMenuItem<String>(
