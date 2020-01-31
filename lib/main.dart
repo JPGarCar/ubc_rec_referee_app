@@ -12,9 +12,14 @@ class MyApp extends StatelessWidget {
       title: 'UBC Rec Flag Football Referee App',
       home: SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-            title: Text("UBC Rec Flag Football"),
-          ),
+          appBar: true
+              ? AppBar(
+                  title: Text("UBC REC Flag Football App"),
+                )
+              : PreferredSize(
+                  preferredSize: Size(0.0, 0.0),
+                  child: Container(),
+                ),
           bottomNavigationBar: BottomNavigationBar(
             // TODO: make sure the buttons work and send the user to the pages
             items: <BottomNavigationBarItem>[
@@ -34,146 +39,174 @@ class MyApp extends StatelessWidget {
           ),
           body: Container(
             padding: EdgeInsets.all(10),
+            constraints: BoxConstraints.expand(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Expanded(
                   flex: 1,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Container(
-                        child: Text("Field"),
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text("Field"),
+                          color: Colors.lightGreenAccent,
+                        ),
                       ),
-                      Container(
-                        child: Text("Game Time"),
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text("Game Time"),
+                          color: Colors.lightGreenAccent,
+                        ),
                       )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: TimerTimeOuts(),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: <Widget>[
+                            Expanded(
+                              child: Container(
+                                child: Text("TIMER"),
+                                color: Colors.lightBlueAccent,
+                              ),
+                            ),
+                            Expanded(
+                              child: RectangleButton(
+                                text: "Start",
+                                function: null,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: TimerTimeOuts(),
+                      ),
                     ],
                   ),
                 ),
                 Expanded(
                   flex: 4,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text("1"),
-                            SizedBox(
-                              width: 10,
-                              height: 10,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                              child: Text("TIMER"),
-                            ),
-                            RectangleButton(
-                              text: "Start",
-                              function: null,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text("1"),
-                            RectangleButton(
-                              text: "T/O",
-                              function: null,
-                              color: Colors.lightBlueAccent,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Expanded(
                         flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text("Team Name One"),
-                            SizedBox(
-                              height: 15,
-                              width: 20,
-                            ),
-                          ],
-                        ),
+                        child: TimerTeamScore(),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            Expanded(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text("Team Name Two"),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                      child: Text(
-                                        "20",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(5),
-                                        border: Border.all(color: Colors.black),
-                                      ),
-                                      constraints:
-                                          BoxConstraints.tightForFinite(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: TimerTeamScore(),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: RectangleButton(text: "End Game", function: null),
                 )
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TimerTimeOuts extends StatelessWidget {
+  const TimerTimeOuts({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: Text("1"),
+              color: Colors.redAccent,
+            ),
+          ),
+          Expanded(
+            child: RectangleButton(
+              edgeInset: 10,
+              text: "T/O",
+              function: null,
+              color: Colors.lightBlueAccent,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TimerTeamScore extends StatelessWidget {
+  const TimerTeamScore({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Container(
+              child: Text(
+                "Team Name Two",
+                textAlign: TextAlign.center,
+              ),
+              alignment: Alignment.center,
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              child: Text(
+                "20",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(color: Colors.black),
+              ),
+              constraints: BoxConstraints.expand(),
+            ),
+          ),
+        ],
       ),
     );
   }
