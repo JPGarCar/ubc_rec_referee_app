@@ -77,10 +77,16 @@ class _TimerPageState extends State<TimerPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: TimerTeamScore(),
+                  child: TimerTeamScore(
+                    score: 20,
+                    teamName: "Rachels Team",
+                  ),
                 ),
                 Expanded(
-                  child: TimerTeamScore(),
+                  child: TimerTeamScore(
+                    score: 19,
+                    teamName: "JPs Team",
+                  ),
                 ),
               ],
             ),
