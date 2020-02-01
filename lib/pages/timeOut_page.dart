@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ubc_rec_refferee_app/components/allComponents.dart';
+import 'package:ubc_rec_refferee_app/constants.dart';
 
 class TimeOutPage extends StatefulWidget {
   @override
@@ -17,7 +18,11 @@ class _TimeOutPageState extends State<TimeOutPage> {
           children: <Widget>[
             Expanded(
               flex: 2,
-              child: Container(),
+              child: ClockBox(
+                minutes: 1,
+                seconds: 00,
+                size: 130,
+              ),
             ),
             Expanded(
               child: RectangleButton(

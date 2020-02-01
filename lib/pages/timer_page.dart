@@ -53,9 +53,10 @@ class _TimerPageState extends State<TimerPage> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Expanded(
-                          child: Container(
-                            child: Text("TIMER"),
-                            color: Colors.lightBlueAccent,
+                          child: ClockBox(
+                            minutes: 20,
+                            seconds: 00,
+                            size: 80,
                           ),
                         ),
                         Expanded(

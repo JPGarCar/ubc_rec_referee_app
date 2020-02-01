@@ -18,7 +18,11 @@ class _ClockPageState extends State<ClockPage> {
             Expanded(
               flex: 2,
               // TODO get that clock
-              child: Text("Clock"),
+              child: ClockBox(
+                minutes: 1,
+                seconds: 30,
+                size: 130,
+              ),
             ),
             Expanded(
               child: RectangleButton(
